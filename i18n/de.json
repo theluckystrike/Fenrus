@@ -2,7 +2,7 @@
   "Language": "Deutsch",
   "Labels": {
     "VersionNumber": "Ausführung: {version}",
-    "Version":"Ausführung",
+    "Version": "Ausführung",
     "Cancel": "Stornieren",
     "Close": "Schließen",
     "Yes": "Ja",
@@ -29,7 +29,7 @@
     "StatusIndicators": "Statusanzeigen",
     "ShowSearch": "Suche Anzeigen",
     "Default": "Standard",
-    "ChooseImage":"Wählen Sie Bild...", 
+    "ChooseImage": "Wählen Sie Bild...",
     "CurrentImage": "Aktuelles Bild",
     "ColorBackground": "Einfarbig",
     "Language": "Sprache",
@@ -52,7 +52,21 @@
     "None": "Keiner",
     "Personal": "Persönlich",
     "Shared": "Geteilt",
-    "Files": "Dateien"
+    "Files": "Dateien",
+    "Address": "Adresse",
+    "Administrator": "Administrator",
+    "Calendar": "Kalender",
+    "Cloud": "Cloud",
+    "DefaultStatic": "Standard (Statisch)",
+    "Icon": "Symbol",
+    "IconPicker": "Symbolauswahl",
+    "Name": "Name",
+    "Notes": "Notizen",
+    "Ok": "OK",
+    "RemoveGroup": "Gruppe entfernen",
+    "SizeAdjustment": "Zoom",
+    "UnsavedMessage": "Warnung: Wenn Sie diese Seite ohne Speichern verlassen, gehen alle nicht gespeicherten Änderungen verloren. Bitte speichern Sie Ihre Arbeit, bevor Sie die Seite verlassen.",
+    "UnsavedTitle": "Warnung: Nicht gespeicherte Änderungen"
   },
   "ContextMenu": {
     "EditDashboard": "Dashboard bearbeiten",
@@ -61,19 +75,31 @@
     "UpTime": "Betriebszeit",
     "Resize": "Größe ändern",
     "Refresh": "Aktualisierung",
-    "UpdateHistory": "Verlauf aktualisieren"
+    "UpdateHistory": "Verlauf aktualisieren",
+    "Log": "Protokoll"
   },
   "Enums": {
     "ItemSize": {
       "Small": "Klein",
       "Medium": "Mittel",
       "Large": "Groß",
-      "Larger": "Größer"
+      "Larger": "Größer",
+      "XLarge": "X-Large",
+      "XXLarge": "XX-Large"
     },
     "LinkTarget": {
-      "OpenInThisTab":"In diesem Tab öffnen", 
+      "OpenInThisTab": "In diesem Tab öffnen",
       "OpenInNewTab": "In neuem Tab öffnen",
       "OpenInSameTab": "In derselben Registerkarte öffnen"
+    },
+    "CloudAppType": {
+      "Docker": "Docker",
+      "External": "In neuem Tab öffnen",
+      "ExternalSame": "Im selben Tab öffnen",
+      "IFrame": "IFrame",
+      "Internal": "In diesem Tab öffnen",
+      "Ssh": "SSH",
+      "Vnc": "VNC"
     }
   },
   "Dialogs": {
@@ -109,12 +135,12 @@
         "ThirdParty": "Dritte Seite"
       }
     },
-    "Dashboards":{
+    "Dashboards": {
       "Title": "Dashboards",
       "Labels": {
         "PageDescription": "Auf dieser Seite können Sie Dashboards erstellen. Wenn Sie mehr als ein Dashboard haben, können Sie auf dem Startbildschirm zwischen ihnen wechseln.\n\nUm Elemente zu Ihrem Dashboard hinzuzufügen, erstellen Sie zunächst eine Gruppe mit den Elementen, die Sie hinzufügen möchten. Anschließend können Sie diese neue Gruppe zu einem Dashboard hinzufügen."
       }
-    }, 
+    },
     "Dashboard": {
       "Title": "Dashboard",
       "Title-Guest": "Gast-Dashboard",
@@ -148,16 +174,14 @@
         "PasswordResetSent": "Wenn der Benutzer existiert, wurde ein Passwort-Reset an Ihre E-Mail-Adresse gesendet oder auf der Konsole ausgedruckt.",
         "ForgotPasswordDescription": "Geben Sie Ihren Benutzernamen oder Ihre E-Mail-Adresse ein und ein Link zum Zurücksetzen des Passworts wird Ihnen per E-Mail zugesendet und in das Konsolenprotokoll gedruckt."
       },
-      "Buttons":
-      {
+      "Buttons": {
         "Login": "Anmeldung",
         "Register": "Registrieren",
         "Guest": "Gast",
         "Reset": "Zurücksetzen",
         "Cancel": "Stornieren"
       },
-      "Fields":
-      {
+      "Fields": {
         "Username": "Nutzername",
         "Password": "Passwort",
         "ForgotPassword": "Passwort vergessen?",
@@ -172,7 +196,8 @@
         "SmtpDescription": "Konfigurieren Sie einen SMTP-Server, dieser wird zum Senden von E-Mails zum Zurücksetzen des Passworts verwendet.",
         "Importing": "Vorherige Konfiguration wird importiert, dies kann eine Weile dauern, bitte warten.",
         "UpdateApps": "Apps aktualisieren",
-        "UpdatingApps": "Apps werden aktualisiert, bitte warten"
+        "UpdatingApps": "Apps werden aktualisiert, bitte warten",
+        "CloudDescription": "Konfigurieren Sie, welche Cloud-Funktionen Endbenutzer verwenden können. Die Cloud ist das seitliche Bedienfeld des Benutzers und gewährt Zugriff auf diese Funktionen."
       },
       "Buttons": {
         "ImportConfig": "Konfig importieren"
@@ -189,8 +214,255 @@
         "SmtpUser": "Benutzer",
         "SmtpPassword": "Passwort",
         "SmtpSender": "Absender",
-        "SmtpSenderHelp": "Die E-Mail-Adresse, von der Fenrus E-Mails sendet."
+        "SmtpSenderHelp": "Die E-Mail-Adresse, von der Fenrus E-Mails sendet.",
+        "CloudApps": "Apps",
+        "CloudCalendar": "Kalender",
+        "CloudEmail": "E-Mail",
+        "CloudEnabled": "Aktiviert",
+        "CloudFiles": "Dateien",
+        "CloudNotes": "Notizen"
       }
+    },
+    "Calendar": {
+      "Fields": {
+        "CacheMinutes": "Cache",
+        "CacheMinutes-Help": "Die Anzahl der Minuten, die dieser Feed zwischengespeichert wird, bevor er aktualisiert wird. Halten Sie diesen Wert hoch, um übermäßige Abfragen der Kalenderdaten zu reduzieren.",
+        "CacheMinutes-Suffix": "Minuten",
+        "Color": "Farbe",
+        "Color-Help": "Die Farbe, in der diese Ereignisse angezeigt werden. Leer lassen, um die Standardfarbe zu verwenden.",
+        "Name": "Name",
+        "Name-Help": "Der Name des Kalender-Feeds",
+        "Type": "Typ",
+        "Type-Help": "Der Typ des Kalender-Feeds. Wenn der gewünschte Typ nicht in dieser Liste enthalten ist, wird er nicht unterstützt.",
+        "Url": "URL",
+        "Url-Help": "Die URL zum Kalender-Feed"
+      },
+      "Labels": {
+        "EditCalendarFeed": "Kalender-Feed bearbeiten",
+        "NewCalendarFeed": "Neuer Kalender-Feed",
+        "PageDescription": "Auf dieser Seite können Sie Kalender-Feeds verwalten. Diese Feeds erscheinen in Ihrem Kalender, sind aber nicht bearbeitbar.",
+        "PageDescription-System": "Auf dieser Seite können Sie Kalender-Feeds verwalten, die allen Benutzern zur Verfügung stehen. Diese Feeds erscheinen in deren Kalender, sind aber nicht bearbeitbar."
+      },
+      "Title": "Kalender",
+      "Title-System": "Systemkalender"
+    },
+    "CloudAppEditor": {
+      "Fields": {
+        "Address": "URL",
+        "Address-Help": "Die URL der zu öffnenden Website. Sie benötigen wahrscheinlich eine HTTPS-URL.\nNicht alle Websites erlauben das Öffnen in einem IFrame und müssen möglicherweise auf einen externen Typ umgestellt werden.",
+        "AddressDocker": "Container",
+        "AddressDocker-Help": "Der Name des Docker-Containers.",
+        "AddressExternal": "URL",
+        "AddressExternal-Help": "Die URL der Webseite, die geöffnet wird.",
+        "AddressSsh": "Adresse",
+        "AddressSsh-Help": "Die Adresse für den SSH-Server. Das Format kann user@host oder user:password@host sein.",
+        "AddressVnc": "Adresse",
+        "AddressVnc-Help": "Die Adresse für den VNC-Server",
+        "AddressVnc-Placeholder": "192.168.1.10:5900",
+        "DockerCommand": "Befehl",
+        "DockerCommand-Help": "Der Docker-Befehl zum Öffnen des Terminals. Versuchen Sie im Zweifelsfall /bin/bash, wenn das fehlschlägt /bin/sh",
+        "DockerUid": "Docker-Server",
+        "Icon": "Symbol",
+        "Type": "Typ"
+      },
+      "Title": "App bearbeiten"
+    },
+    "Docker": {
+      "Labels": {
+        "PageDescription": "Auf dieser Seite können Sie Docker-Instanzen konfigurieren, die in Apps und Links verwendet werden können, um Terminals darin zu öffnen."
+      },
+      "Title": "Docker"
+    },
+    "Group": {
+      "Buttons": {
+        "AddItem": "Element hinzufügen"
+      },
+      "Fields": {
+        "Name-Help": "Der Name der Gruppe",
+        "ShowGroupTitle": "Gruppentitel anzeigen",
+        "ShowGroupTitle-Help": "Ob der Gruppentitel angezeigt werden soll oder nicht"
+      },
+      "Messages": {
+        "ItemCopied": "Element ''{itemName}'' in Gruppe ''{groupName}'' kopiert"
+      },
+      "Title": "Gruppe",
+      "Title-System": "Systemgruppe"
+    },
+    "GroupItem": {
+      "Fields": {
+        "ApiUrl": "API-URL",
+        "ApiUrl-Help": "Optionale URL für die API-Kontaktaufnahme, falls diese sich von der obigen URL unterscheidet.\nDie Haupt-URL ist die, zu der der Benutzer beim Klicken auf das Element geführt wird.",
+        "App": "App",
+        "Debug": "Debug",
+        "Debug-Help": "Zeigt zusätzliche Debug-Informationen im Ergebnis des 'Tests' an.",
+        "DockerCommand": "Befehl",
+        "DockerCommand-Help": "Der Befehl, mit dem verbunden werden soll",
+        "DockerContainer": "Name",
+        "DockerContainer-Help": "Der Name des Docker-Containers, mit dem verbunden werden soll",
+        "DockerUid": "Docker",
+        "DockerUid-Help": "Die Docker-Instanz, mit der dieses Element verbunden wird.",
+        "Icon": "Symbol",
+        "Monitor": "Überwachung",
+        "Monitor-Help": "Wenn aktiviert, wird die Verfügbarkeit dieses Elements überwacht.",
+        "Name": "Name",
+        "Size": "Größe",
+        "SshAddress": "Adresse",
+        "SshAddress-Help": "Optionale Adresse für die Verbindung zu einem SSH-Terminal.",
+        "SshPassword": "Passwort",
+        "SshPassword-Help": "Optionales Passwort für die Verbindung zu einem SSH-Terminal.",
+        "SshUsername": "Benutzername",
+        "SshUsername-Help": "Optionaler Benutzername für die Verbindung zu einem SSH-Terminal.",
+        "Target": "Ziel",
+        "Terminal": "Terminal",
+        "Type": "Typ"
+      },
+      "Labels": {
+        "ApplicationUrl": "Anwendungs-URL",
+        "Author": "Autor",
+        "Description": "Beschreibung",
+        "DockerDescription": "Hier können Sie die Docker-Einstellungen für dieses Element konfigurieren, mit denen Sie ein Terminal im Docker-Container öffnen können.",
+        "DockerTerminalDescription": "Hinweis: Wenn SSH konfiguriert ist, können Sie diese Docker-Verbindung nicht verwenden.",
+        "KeepOpen": "Offen halten",
+        "SshDescription": "Durch die SSH-Konfiguration für dieses Element können Sie ein Terminal zu diesem Element öffnen.\n\nWenn Benutzername oder Passwort leer sind, werden Sie zur Eingabe dieser Informationen aufgefordert.",
+        "TestFailed": "Test fehlgeschlagen",
+        "TestSuccessful": "Test erfolgreich"
+      },
+      "Tabs": {
+        "Docker": "Docker",
+        "General": "Allgemein",
+        "Info": "Info",
+        "Properties": "Eigenschaften",
+        "SSH": "SSH"
+      },
+      "Title": "Gruppenelement"
+    },
+    "Groups": {
+      "Labels": {
+        "PageDescription": "Auf dieser Seite können Sie Gruppen erstellen, die auf Dashboards verwendet werden können.\n\nEine Gruppe erscheint nicht von selbst, sie muss zu einem Dashboard hinzugefügt werden.",
+        "PageDescription-System": "Auf dieser Seite können Sie Gruppen konfigurieren, die allen Benutzern zur Verfügung stehen und im Gast-Dashboard verwendet werden können.\n\nWenn Sie hier eine Gruppe deaktivieren, ist diese Gruppe für alle Benutzer nicht mehr verfügbar."
+      },
+      "Title": "Gruppen",
+      "Title-System": "Systemgruppen"
+    },
+    "Profile": {
+      "Fields": {
+        "AppsEnabled": "Aktiviert",
+        "CalendarEnabled": "Aktiviert",
+        "CalendarName": "Name",
+        "CalendarName-Help": "Der Name des Kalenders. Wenn nicht festgelegt, wird der erste gefundene Kalender verwendet.",
+        "CalendarPassword": "Passwort",
+        "CalendarProvider": "Anbieter",
+        "CalendarUrl": "URL",
+        "CalendarUrl-Help": "Geben Sie bei einem bekannten Anbieter einfach die Basis-URL des Kalenders ein. Zum Beispiel: https://mynextcloud.com",
+        "CalendarUsername": "Benutzername",
+        "Email": "E-Mail",
+        "Email-Help": "Diese E-Mail-Adresse wird für Passwortzurücksetzungen verwendet",
+        "EmailEnabled": "Aktiviert",
+        "EmailImapPassword": "Passwort",
+        "EmailImapPort": "Port",
+        "EmailImapServer": "IMAP-Server",
+        "EmailImapServer-Help": "Die IMAP-Serveradresse zum Empfangen von E-Mails",
+        "EmailImapUsername": "Benutzername",
+        "EmailSmtpPassword": "Passwort",
+        "EmailSmtpPort": "Port",
+        "EmailSmtpServer": "SMTP-Server",
+        "EmailSmtpServer-Help": "Die SMTP-Serveradresse zum Senden von E-Mails",
+        "EmailSmtpUsername": "Benutzername",
+        "FileStoragePassword": "Passwort",
+        "FileStorageProvider": "Anbieter",
+        "FileStorageUrl": "URL",
+        "FileStorageUrl-Help": "Geben Sie bei einem bekannten Anbieter einfach die Basis-URL für die Dateispeicherung ein. Zum Beispiel: https://mynextcloud.com",
+        "FileStorageUsername": "Benutzername",
+        "FilesEnabled": "Aktiviert",
+        "FullName": "Vollständiger Name",
+        "NotesEnabled": "Notizen aktiviert",
+        "PasswordConfirm": "Neues Passwort bestätigen",
+        "PasswordCurrent": "Aktuelles Passwort",
+        "PasswordNew": "Neues Passwort",
+        "Username": "Benutzername"
+      },
+      "Labels": {
+        "Apps": "Apps",
+        "Calendar": "Kalender",
+        "ChangePassword": "Passwort",
+        "Email": "E-Mail",
+        "FileStorage": "Dateispeicherung",
+        "General": "Allgemein",
+        "NewGroup": "Neue Gruppe",
+        "PageDescription": "Auf dieser Seite können Sie Ihre Benutzerprofileinstellungen ändern.",
+        "PageDescription-Apps": "Hiermit können Sie die Apps konfigurieren, die in der Cloud-Schublade angezeigt werden.",
+        "PageDescription-Calendar": "Hiermit können Sie die Kalenderquelle für Ihren persönlichen Kalender anpassen.\n\nSie können eine CalDAV-Quelle angeben. In diesem Fall werden alle Ereignisse in dieser Quelle gespeichert, andernfalls werden sie direkt in Fenrus gespeichert.",
+        "PageDescription-Email": "Hiermit können Sie einen IMAP-Server für den Empfang Ihrer E-Mails konfigurieren.",
+        "PageDescription-FileStorage": "Hiermit können Sie die Quelle der Dateispeicherung anpassen. Sie können entweder den integrierten lokal gehosteten Dateisystem-Speicher oder eine externe WebDAV-Quelle verwenden."
+      },
+      "Messages": {
+        "InvalidEmail": "Ungültige E-Mail-Adresse",
+        "OtherUserExists": "Ein anderer Benutzer mit diesem Benutzernamen existiert bereits",
+        "PasswordChanged": "Passwort geändert",
+        "PasswordIncorrect": "Das aktuelle Passwort ist falsch",
+        "PasswordMismatch": "Das neue und das bestätigte Passwort stimmen nicht überein.",
+        "PasswordValidationError": "Das Passwort muss mindestens 4 Zeichen lang sein"
+      },
+      "Title": "Profil"
+    },
+    "SearchEngine": {
+      "Fields": {
+        "Icon": "Symbol",
+        "Name-Help": "Der Name der Suchmaschine",
+        "Shortcut": "Verknüpfung",
+        "Shortcut-Help": "Die Verknüpfung für diese Suchmaschine. Wenn Sie diese Verknüpfung und dann ein Leerzeichen eingeben, wechselt die Suche zu dieser Suchmaschine.",
+        "Url": "URL",
+        "Url-Help": "Die URL der Suchmaschine. Beachten Sie, dass %s durch den Suchbegriff ersetzt wird"
+      },
+      "Title": "Suchmaschine",
+      "Title-System": "System-Suchmaschinen"
+    },
+    "SearchEngines": {
+      "Labels": {
+        "AddSearchEngine": "Suchmaschine hinzufügen",
+        "EditSearchEngine": "Suchmaschine bearbeiten",
+        "PageDescription": "Auf dieser Seite können Sie Suchmaschinen konfigurieren, die auf dem Startbildschirm verwendet werden können.\n\nWenn Sie keine konfigurieren und keine System-Suchmaschinen konfiguriert sind, wird das Suchfeld auf dem Startbildschirm nicht angezeigt.\n\nUm auf dem Startbildschirm zu einer nicht standardmäßigen Suchmaschine zu wechseln, geben Sie die Suchmaschinen-Verknüpfung gefolgt von einem Leerzeichen ein.",
+        "PageDescription-System": "Auf dieser Seite können Sie systemweite Suchmaschinen konfigurieren, die allen Benutzern und Gästen des Systems zur Verfügung stehen."
+      },
+      "Title": "Suchmaschinen",
+      "Title-System": "System-Suchmaschinen"
+    },
+    "User": {
+      "Fields": {
+        "Email": "E-Mail",
+        "FullName": "Vollständiger Name",
+        "FullName-Help": "Der vollständige Name des Benutzers oder der anzuzeigende Name. Wenn leer gelassen, wird der Benutzername als Anzeigename verwendet.",
+        "IsAdmin": "Administrator",
+        "Password": "Passwort",
+        "Username": "Benutzername"
+      },
+      "Labels": {
+        "EditUser": "Benutzer bearbeiten",
+        "NewUser": "Neuer Benutzer"
+      },
+      "Title": "Benutzer"
+    },
+    "Users": {
+      "Columns": {
+        "Admin": "Administrator",
+        "Email": "E-Mail",
+        "FullName": "Vollständiger Name",
+        "Username": "Benutzername"
+      },
+      "Fields": {
+        "AllowRegistrations": "Registrierungen zulassen"
+      },
+      "Labels": {
+        "PageDescription": "Auf dieser Seite können Sie die Benutzer für Fenrus verwalten."
+      },
+      "Messages": {
+        "CannotEditSelf": "Sie können sich selbst nicht bearbeiten"
+      },
+      "Title": "Benutzer"
     }
+  },
+  "ErrorMessages": {
+    "404RouteNotKnown": "Entschuldigung, an dieser Adresse befindet sich nichts.",
+    "DockerServerNotFound": "Docker-App-Server nicht gefunden: {uid}"
   }
 }
